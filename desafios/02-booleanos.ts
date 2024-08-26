@@ -16,15 +16,15 @@ if (!parkOpen) {
   throw new Error('O parque está fechado!')
 }
 
-const ticket = user.hasTicket
+const isTicket = user.hasTicket
 
-if (!ticket) {
+if (!isTicket) {
   throw new Error('O Diego não possui um bilhete para entrar no parque!')
 }
 
-const enterToy = user.height > necessaryHeight
+const canEnterToy = user.height > necessaryHeight
 
-if (!enterToy) {
+if (!canEnterToy) {
   throw new Error('O Diego não pode entrar no brinquedo!')
 } 
 

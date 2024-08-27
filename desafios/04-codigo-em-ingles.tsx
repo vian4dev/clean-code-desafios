@@ -21,9 +21,9 @@ export function ListProduto() {
   const [filteredProdutos, setFilteredProdutos] = useState<Product[]>([])
 
   function searchProduto(search: string) {
-    const filtrado = productList.filter(product => product.title.includes(search))
+    const filtered = productList.filter(product => product.title.includes(search))
 
-    setFilteredProdutos(filtrado)
+    setFilteredProdutos(filtered)
   }
 
   return (

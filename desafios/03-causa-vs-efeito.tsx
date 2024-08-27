@@ -18,24 +18,24 @@ function fetchUser() {
 }
 
 export function UserProfile() {
-  const [shouldNotRenderUserName, setShouldNotRenderUserName] = useState(false)
+  const [waitingUsernameRendered, setWaitingUsernameRendered] = useState(false)
   const [userData, setUserData] = useState<User>()
 
   useEffect(() => {
     function loadUser() {
-      setShouldNotRenderUserName(true)
+      setWaitingUsernameRendered(true)
 
       const fetchUserResponse = fetchUser()
 
       setUserData(fetchUserResponse.data.user)
       
-      setShouldNotRenderUserName(false)
+      setWaitingUsernameRendered(false)
     }
 
     loadUser()
   })
 
-  if (shouldNotRenderUserName) {
+  if (waitingUsernameRendered) {
     return <p>Loading...</p>
   }
 
